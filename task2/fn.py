@@ -1,4 +1,4 @@
-EPS = 0.00001
+# EPS = 0.00000000001
 
 
 def left_rectangle(f, xi, xj):
@@ -33,6 +33,33 @@ def simpson(f, xi, xj):
     r = f(xi) + f(xc) * 4 + f(xj)
 
     return r * dx / 6
+
+
+def newton2(f, xi, xj):
+
+    p = (xi + xj) / 2
+    q = (xi - xj) * (3 ** 0.5) / 6
+
+    r = f(p + q) + f(p - q)
+
+    return r * (xj - xi) / 2
+
+
+def newton3(f, xi, xj):
+    p = (xi + xj) / 2
+    q = (xj - xi) / 2
+
+    x1 = -0.774596669240
+    x3 = -x1
+
+    y1 = p + q * x1
+    y3 = p + q * x3
+    y2 = p
+
+    r = f(y1) * 5 + f(y2) * 8 + f(y3) * 5
+    r = r * q / 9
+
+    return r
 
 
 def split(N, a, b):
@@ -80,10 +107,23 @@ def power(d1, d2):
     R = []
 
     for i in range(len(d1)):
-        if (abs(d2[i]) < EPS):
-            R.append(-1)
-        else:
-            R.append(d1[i] / d2[i])
+        # if (abs(d2[i]) < EPS):
+        #     R.append(-1)
+        # else:
+        R.append(d1[i] / d2[i])
+
+    return R
+
+# В работе
+def improve(table, i, j, p):
+    d1 = table[i]
+    d2 = table[j]
+
+    R = [0] * len(d1)
+
+    for i in range(len(d1)):
+        a = -1 / (2 ** p[table[0][i]] - 1)
+        R[i] = a * d1[i] + (1 - a) * d2[i]
 
     return R
 
