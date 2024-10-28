@@ -115,15 +115,17 @@ def power(d1, d2):
     return R
 
 # В работе
-def improve(table, i, j, p):
-    d1 = table[i]
-    d2 = table[j]
-
+def improve(table, d1, d2, p, t):
     R = [0] * len(d1)
 
     for i in range(len(d1)):
         a = -1 / (2 ** p[table[0][i]] - 1)
-        R[i] = a * d1[i] + (1 - a) * d2[i]
+        r = a * d1[i] + (1 - a) * d2[i]
+
+        if t is None:
+            R[i] = r
+        else:
+            R[i] = abs(r - t)
 
     return R
 
