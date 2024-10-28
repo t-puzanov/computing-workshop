@@ -21,8 +21,8 @@ def main():
         "Central Rectangles": fn.central_rectangle,
         "Trapezoid": fn.trapezoid,
         "Simpson": fn.simpson,
-        "Newton (n=1)": fn.newton2,
-        "Newton (n=2)": fn.newton3
+        "Newton (k=1)": fn.newton2,
+        "Newton (k=2)": fn.newton3
     }
 
     p = {
@@ -30,8 +30,8 @@ def main():
         "Central Rectangles": 2,
         "Trapezoid": 2,
         "Simpson": 4,
-        "Newton (n=1)": 4,
-        "Newton (n=2)": 6
+        "Newton (k=1)": 4,
+        "Newton (k=2)": 6
     }
 
     tLen = max(map(len, fns.keys()))
@@ -45,11 +45,11 @@ def main():
     table.append(fn.calc(cols, fns, F, N * 1, X1, t))
     table.append(fn.calc(cols, fns, F, N * 2, X2, t))
 
-    table.append(fn.improve(table, d1, d2, p, t))
-
     table.append(fn.power(table[1], table[2]))
 
-    fn.print_table(table, tLen, [15, 15, 15, 2])
+    table.append(fn.improve(table, d1, d2, p, t))
+
+    fn.print_table(table, tLen, [15, 15, 2, 15])
 
 
 if __name__ == "__main__":
