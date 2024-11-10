@@ -21,8 +21,8 @@ def main():
         "Central Rectangles": fn.central_rectangle,
         "Trapezoid": fn.trapezoid,
         "Simpson": fn.simpson,
-        "Gauss (k=1)": fn.newton2,
-        "Gauss (k=2)": fn.newton3
+        "Gauss (k=1)": fn.gauss2,
+        "Gauss (k=2)": fn.gauss3
     }
 
     p = {

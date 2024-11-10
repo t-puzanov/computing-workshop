@@ -35,7 +35,7 @@ def simpson(f, xi, xj):
     return r * dx / 6
 
 
-def newton2(f, xi, xj):
+def gauss2(f, xi, xj):
 
     p = (xi + xj) / 2
     q = (xi - xj) * (3 ** 0.5) / 6
@@ -45,7 +45,7 @@ def newton2(f, xi, xj):
     return r * (xj - xi) / 2
 
 
-def newton3(f, xi, xj):
+def gauss3(f, xi, xj):
     p = (xi + xj) / 2
     q = (xj - xi) / 2
 
