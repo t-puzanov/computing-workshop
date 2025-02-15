@@ -11,6 +11,10 @@ __pycache__/
 
 bin
 
+.ipynb_checkpoints
+
+.jupyter
+
 # Distribution / packaging
 .Python
 build/
