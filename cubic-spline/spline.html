@@ -7676,25 +7676,8 @@ a.anchor-link {
 </ul>
 <p>Приравнивание этих производных, которые получены в узлах $x_i$
 с соседних подинтервалов $[x_{i-1}, x_i]$ и $[x_i, x_{i+1}]$, даёт уравнения</p>
-<p>$$\frac{h_i}{6} \gamma_{i-1} + \frac{h_i + h_{i+1}}{3} \gamma_i + \frac{h_{i+1}}{6} \gamma_{i+1} = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i}$$</p>
+<p>$$\frac{h_i}{6} \gamma_{i-1} + \frac{h_i + h_{i+1}}{3} \gamma_i + \frac{h_{i+1}}{6} \gamma_{i+1} = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i} \tag{1}$$</p>
 <p>где $i = 1, \dots, N-1$.</p>
-<p>Запишем полученную СЛАУ в матричном виде, в случае, когда $\gamma_0, \gamma_N$ известны.</p>
-<p>$$H = \frac{1}{6} \begin{pmatrix}
-2 (h_1 + h_2) &amp; h_2 &amp; 0 &amp; \cdots &amp; 0 \\
-h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
-0 &amp; h_3 &amp; \ddots &amp; \ddots \\
-\vdots &amp; &amp; \ddots &amp; &amp; h_{N-1} \\
-0 &amp; \cdots &amp; &amp; h_{N-1} &amp; 2(h_{N-1} + h_N)
-\end{pmatrix}$$</p>
-<p>$$ H \gamma = b \tag{1}$$</p>
-<p>Вектор неизвестных $\gamma = (\gamma_1, \dots, \gamma_{N-1})$.</p>
-<p>Вектор $b = (b_1, \dots, b_{N-1})$.</p>
-<p>$$b_1 = \frac{y_2 - y_1}{h_{2}} - \frac{y_1 - y_0}{h_1} - \frac{h_1 \gamma_0}{6}$$</p>
-<p>$$b_{N-1} = \frac{y_{N} - y_{N-1}}{h_{N}} - \frac{y_{N-1} - y_{N-2}}{h_{N-1}} - \frac{h_{N} \gamma_{N}}{6}$$</p>
-<p>$$b_i = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i}$$</p>
-<blockquote>
-<p>Матрица $H$ по признаку Адамара является неособенной (т.к. $H$ - матрица с диагональным преобладанием), поэтому решение СЛАУ существует и единственно.</p>
-</blockquote>
 </div>
 </div>
 </div>
@@ -7705,7 +7688,7 @@ h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B8-%D0%A1%D0%9B%D0%90%D0%A3">Условия и СЛАУ<a class="anchor-link" href="#%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B8-%D0%A1%D0%9B%D0%90%D0%A3">¶</a></h3>
+<h3 id="%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B8-%D0%A1%D0%9B%D0%90%D0%A3">Дополнительные условия и СЛАУ<a class="anchor-link" href="#%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B8-%D0%A1%D0%9B%D0%90%D0%A3">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7732,7 +7715,7 @@ h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2">СЛАУ для условий 2<a class="anchor-link" href="#%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2">¶</a></h4>
+<h4 id="%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2">СЛАУ для дополнительных условий 2<a class="anchor-link" href="#%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2">¶</a></h4>
 </div>
 </div>
 </div>
@@ -7744,12 +7727,28 @@ h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Формула для интерполяционного кубического сплайна $S(x)$ была получена, путем двойного интегрирования линейной функции $S^{\prime \prime}(x)$</p>
-<p>$$S^{\prime \prime}(x) = \gamma_i \frac{x_{i+1} - x}{h_{i+1}} + \gamma_{i+1} \frac{x - x_i}{h_{i+1}} \tag{2}$$</p>
+<p>$$S^{\prime \prime}(x) = \gamma_i \frac{x_{i+1} - x}{h_{i+1}} + \gamma_{i+1} \frac{x - x_i}{h_{i+1}}$$</p>
 <p>Найдем значения второй производной $S(x)$ на концах интервала $[a,b]$</p>
 <p>$$S^{\prime \prime}(a) = \gamma_0 \frac{x_{1} - x_0}{h_{1}} + \gamma_{1} \frac{x_0 - x_0}{h_{1}} = \gamma_0$$</p>
 <p>$$S^{\prime \prime}(b) = \gamma_{N-1} \frac{x_{N} - x_N}{h_{N}} + \gamma_{N} \frac{x_N - x_{N-1}}{h_{N}} = \gamma_N$$</p>
 <p>Поэтому параметры $\gamma_i$ в формулах совпадают по смыслу с параметрами из условия 2.</p>
-<p>Т.к. $\gamma_0, \gamma_N$ известны, можно определить оставшиеся коэффициенты $\gamma_i$ из системы $H \gamma = b$.</p>
+<p>Запишем СЛАУ (1) в матричном виде, в случае, когда $\gamma_0, \gamma_N$ известны.</p>
+<p>$$\widehat{H} = \frac{1}{6} \begin{pmatrix}
+2 (h_1 + h_2) &amp; h_2 &amp; 0 &amp; \cdots &amp; 0 \\
+h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
+0 &amp; h_3 &amp; \ddots &amp; \ddots \\
+\vdots &amp; &amp; \ddots &amp; &amp; h_{N-1} \\
+0 &amp; \cdots &amp; &amp; h_{N-1} &amp; 2(h_{N-1} + h_N)
+\end{pmatrix}$$</p>
+<p>$$ \widehat{H} \gamma = \widehat{b} $$</p>
+<p>Вектор неизвестных $\gamma = (\gamma_1, \dots, \gamma_{N-1})$.</p>
+<p>Вектор $\widehat{b} = (\widehat{b}_1, \dots, \widehat{b}_{N-1})$.</p>
+<p>$$\widehat{b}_1 = \frac{y_2 - y_1}{h_{2}} - \frac{y_1 - y_0}{h_1} - \frac{h_1 \gamma_0}{6}$$</p>
+<p>$$\widehat{b}_{N-1} = \frac{y_{N} - y_{N-1}}{h_{N}} - \frac{y_{N-1} - y_{N-2}}{h_{N-1}} - \frac{h_{N} \gamma_{N}}{6}$$</p>
+<p>$$\widehat{b}_i = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i}$$</p>
+<blockquote>
+<p>Матрица $\widehat{H}$ по признаку Адамара является неособенной (т.к. $\widehat{H}$ - матрица с диагональным преобладанием), поэтому решение СЛАУ существует и единственно.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -7760,7 +7759,7 @@ h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1">СЛАУ для условий 1<a class="anchor-link" href="#%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1">¶</a></h4>
+<h4 id="%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1">СЛАУ для дополнительных условий 1<a class="anchor-link" href="#%D0%A1%D0%9B%D0%90%D0%A3-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1">¶</a></h4>
 </div>
 </div>
 </div>
@@ -7782,9 +7781,9 @@ h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots \\
 <p>$$ S^{\prime}(b) = \frac{y_{N} - y_{N-1}}{h_{N}} - \gamma_{N-1} \frac{3(x_{N} - x_N)^2 - h^2_{N}}{6 h_{N}} + \gamma_{N} \frac{3(x_N - x_{N-1})^2 - h^2_{N}}{6 h_{N}} = $$</p>
 <p>$$\frac{y_{N} - y_{N-1}}{h_{N}} + \gamma_{N-1} \frac{ h_{N}}{6} + \gamma_{N} \frac{h_N}{3} = \beta_N$$</p>
 <p>В итоге получим новую СЛАУ</p>
-<p>$$\begin{cases} \ \ \dfrac{y_{1} - y_0}{h_{1}} - \gamma_0 \dfrac{h_1}{3} - \gamma_{1} \dfrac{h_{1}}{6} = \beta_0 \\ \\ \ \ \dfrac{y_{N} - y_{N-1}}{h_{N}} + \gamma_{N-1} \dfrac{ h_{N}}{6} + \gamma_{N} \dfrac{h_N}{3} = \beta_N \\ \\ \ \ H^{(*)} \gamma = b^{(*)} \end{cases} $$</p>
+<p>$$\begin{cases} \ \ \dfrac{y_{1} - y_0}{h_{1}} - \gamma_0 \dfrac{h_1}{3} - \gamma_{1} \dfrac{h_{1}}{6} = \beta_0 \\ \\ \ \ \cdots \\ \\ \ \ \dfrac{y_{N} - y_{N-1}}{h_{N}} + \gamma_{N-1} \dfrac{ h_{N}}{6} + \gamma_{N} \dfrac{h_N}{3} = \beta_N \end{cases} $$</p>
 <p>Запишем полученную систему в матричном виде</p>
-<p>$$H^{(1)} = \frac{1}{6} \begin{pmatrix}
+<p>$$\widetilde{H} = \frac{1}{6} \begin{pmatrix}
 2 h_1 &amp; h_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
 h_1 &amp; 2 (h_1 + h_2) &amp; h_2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
 0 &amp; h_2 &amp; 2(h_2 + h_3) &amp; h_3 &amp;  &amp; \vdots &amp; 0 \\
@@ -7793,14 +7792,14 @@ h_1 &amp; 2 (h_1 + h_2) &amp; h_2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; \cdots &amp; &amp; h_{N-1} &amp; 2(h_{N-1} + h_N) &amp; h_N \\
 0 &amp; 0 &amp; \cdots &amp; &amp; 0 &amp; h_N &amp; 2 h_N
 \end{pmatrix}$$</p>
-<p>$$ H^{(1)} \gamma = b^{(1)}$$</p>
+<p>$$ \widetilde{H} \gamma = \widetilde{b}$$</p>
 <p>Вектор неизвестных $\gamma = (\gamma_0, \gamma_1, \dots, \gamma_{N})$.</p>
-<p>Вектор $b^{(1)} = (b^{(1)}_0, b^{(1)}_1, \dots, b^{(1)}_{N})$.</p>
-<p>$$b^{(1)}_0 = \frac{y_1 - y_0}{h_1} - \beta_0$$
-$$b^{(1)}_N = \beta_N - \frac{y_N - y_{N-1}}{h_N}$$
-$$b^{(1)}_i = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i} $$</p>
+<p>Вектор $\widetilde{b} = (\widetilde{b}_0, \widetilde{b}_1, \dots, \widetilde{b}_{N})$.</p>
+<p>$$\widetilde{b}_0 = \frac{y_1 - y_0}{h_1} - \beta_0$$
+$$\widetilde{b}_N = \beta_N - \frac{y_N - y_{N-1}}{h_N}$$
+$$\widetilde{b}_i = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i} $$</p>
 <blockquote>
-<p>Матрица $H^{(1)}$ также является матрицей с диагональным преобладанием, поэтому (по признаку Адамара) является неособенной. Значит существует единственное решение СЛАУ.</p>
+<p>Матрица $\widetilde{H}$ также является матрицей с диагональным преобладанием, поэтому (по признаку Адамара) является неособенной. Значит существует единственное решение СЛАУ.</p>
 </blockquote>
 </div>
 </div>
